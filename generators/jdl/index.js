@@ -20,9 +20,5 @@ module.exports = class extends Generator {
     prompting() {
         this.options.config = this.config.getAll();
     }
-
-    writing() {
-        var json = jdlCore.exportEntities({entities: this.data.entities})
-        console.info(json)
-    }
+    
   };
