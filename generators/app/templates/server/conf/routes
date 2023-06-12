@@ -4,6 +4,7 @@
 #
 
 module:testrunner
+*      /api/                module:api
 # module:jobs
 
 GET     /favicon.ico                            404

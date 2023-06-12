@@ -15,6 +15,7 @@ module.exports = class extends Generator {
         this.composeWith('gorilla:model', this.data);
         this.composeWith('gorilla:controller', this.data);
         this.composeWith('gorilla:router', this.data);
+        this.composeWith('gorilla:service', this.data);
     }
 
     prompting() {
