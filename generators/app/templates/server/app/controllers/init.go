@@ -14,12 +14,9 @@ var menus []Menu
 func init() {
 	revel.InterceptFunc(checkUser, revel.BEFORE, &Controller{})
 	revel.InterceptFunc(adminUI, revel.AFTER, &Controller{})
-	revel.InterceptFunc(doNothing, revel.BEFORE, &Setup{})
 	menus = []Menu{}
 	revel.OnAppStart(LoadSitemaps)
 }
-
-func doNothing(c *revel.Controller) revel.Result { return nil }
 
 func checkUser(c *revel.Controller) revel.Result {
 	if c.Name == "Setup" || c.Name == "Auth" {
