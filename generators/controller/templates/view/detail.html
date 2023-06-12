@@ -23,6 +23,6 @@
 {{end}}
 
 <a class="btn  btn-info" href="{{url "<%- entity.name %>.Edit" .<%- entity.lname %>.ID}}">Edit</a>
-<a class="btn btn-danger" onclick="deleteAndGo('{{url "<%- entity.name %>.Delete" .<%- entity.lname %>.Id}}', '{{url "<%- entity.name %>.Index"}}')">Delete</a>
+<a class="btn btn-danger" onclick="deleteAndGo('{{url "<%- entity.name %>.Delete" .<%- entity.lname %>.ID}}', '{{url "<%- entity.name %>.Index"}}')">Delete</a>
 
 {{template "footer.html" .}}

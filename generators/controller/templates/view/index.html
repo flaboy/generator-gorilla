@@ -19,7 +19,6 @@
     {{range .<%- entity.lname %>_list}}
         <li class="list-group-item">
         <a href="{{url "<%- entity.name %>.Detail" .ID}}">{{.Name}}</a>
-        {{.Platform}}
         </li>
     {{end}}
 </ul>
