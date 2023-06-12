@@ -16,7 +16,7 @@
 <% entity.body.forEach(function(field){ -%>
           <div class="mb-3">
             <label class="form-label"><%- field.Uname %></label>
-            <input type="text" class="form-control" value="{{.<%- entity.lname %>.<%- field.Uname %>}}" name="<%- field.lname %>" placeholder="<%- field.type %>" />
+            <input type="text" class="form-control" value="{{.<%- entity.lname %>.<%- field.Uname %>}}" name="<%- field.columnName %>" placeholder="<%- field.type %>" />
           </div>
 <% }); %>
         <button type="submit" class="btn btn-primary">Save</button>

@@ -16,3 +16,7 @@ type <%- entity.name %> struct {
 	<%- field.Uname %>		<%- field.type %> `json:"<%- field.name %>"`
 <% }); -%>
 }
+
+func (m *<%- entity.name %>) ToString() string {
+	return "<%- entity.name %>"
+}

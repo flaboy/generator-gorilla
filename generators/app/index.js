@@ -16,7 +16,9 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('server'),
             this.destinationPath('./'),
-            this.options
+            this.options,
+            null,
+            {globOptions: {dot: true, ignore: ['.DS_Store', '**/.DS_Store', '**/node_modules/**']}}
         );
         this.fs.delete(this.destinationPath('go.sum'));        
         for(var i in this.options.config){

@@ -18,7 +18,7 @@
 <ul class="list-group">
     {{range .<%- entity.lname %>_list}}
         <li class="list-group-item">
-        <a href="{{url "<%- entity.name %>.Detail" .ID}}">{{.Name}}</a>
+        <a href="{{url "<%- entity.name %>.Detail" .ID}}">{{.ToString}}</a>
         </li>
     {{end}}
 </ul>
