@@ -1,0 +1,96 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+.footer{
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+}
+body{
+  background: #f0f0f0;
+}
+.item-list{
+    // border:1px solid #ccc;
+    border-bottom: none;
+    margin-bottom: 20px;
+  }
+  .item{
+    // padding:20px 10px;
+    background: #fff;
+    margin: 10px 0;
+    border:1px solid #ccc;
+  }
+  .item-list .item{
+    // border-bottom:1px solid #ccc;
+  }
+  .item-title{
+    font-size: 1.1rem;
+    padding:10px;
+  }
+  .item-code{
+    background-color: #ccc;
+    // color:#fff;
+    padding:10px;
+    font-size: 0.85rem;
+    line-height: 1.3rem;
+    margin:0;
+  }
+  .item-info{
+    padding:10px;
+  }
+  .clipboard .bi-clipboard{
+    cursor: pointer;
+    padding:10px;
+  }
+  .clipboard .bi-check2{
+    padding:10px;
+    display: none;
+  }
+  .copied .bi-check2{
+    display: inline;
+  }
+  .copied .bi-clipboard{
+    display: none; 
+  }
+  .tagname, .item-title a{
+    text-decoration: none;
+  }
+  .tagname:hover{
+    color: #fff;
+  }
+  .pagination{
+    background: none;
+  }
+  .pagination *{
+    border: none;
+  }
+  @keyframes navbar-header
+  {
+    from{
+      height: 120px;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0);
+    }
+    to{
+      height: 60px;
+      font-size: 1rem;
+      background: rgba(255,255,255,1);
+    }
+  }
+  .navbar-top{
+    height: 120px;
+    top: 0;
+    width: 100%;        
+    position: fixed;
+    font-size: 1.2rem;
+  }
+  .navbar-header{
+    height: 120px;
+  }
+  .navbar-scrolled .navbar-top{
+    animation: navbar-header 0.5s;
+    height: 60px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    background: rgba(255,255,255,1);
+  }

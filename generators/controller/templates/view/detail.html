@@ -1,0 +1,28 @@
+{{set . "title" "<%- entity.name %>"}}
+{{template "header.html" .}}
+
+{{with .<%- entity.lname %>}}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{url "App.Index"}}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{{url "<%- entity.name %>.Index"}}"><%- entity.name %></a></li>
+      <li class="breadcrumb-item active" aria-current="page">Detail</li>
+    </ol>
+</nav>
+
+<div class="col-6 card p-3 my-3">
+<% entity.body.forEach(function(field){ -%>
+  <div class="mb-3">
+    <label class="form-label"><%- field.Uname %></label>
+    <div class="form-text">{{.<%- field.Uname %>}}</div>
+  </div>
+<% }); %>
+</div>
+
+{{end}}
+
+<a class="btn  btn-info" href="{{url "<%- entity.name %>.Edit" .<%- entity.lname %>.ID}}">Edit</a>
+<a class="btn btn-danger" onclick="deleteAndGo('{{url "<%- entity.name %>.Delete" .<%- entity.lname %>.Id}}', '{{url "<%- entity.name %>.Index"}}')">Delete</a>
+
+{{template "footer.html" .}}

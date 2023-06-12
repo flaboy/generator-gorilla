@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/public/{{(manifest "main.css").file}}">
+    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+    <script src="/public/{{(manifest "main.js").file}}" type="text/javascript" charset="utf-8"></script>    
+    {{range .moreStyles}}
+      <link rel="stylesheet" type="text/css" href="/public/{{(manifest .).file}}">
+    {{end}}
+    {{range .moreScripts}}
+      <script src="/public/{{(manifest .).file}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+  </head>
+  <style>
+    .admin-ui-side{
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      display: flex;
+    }
+    .admin-ui-main{
+      margin: 10px 10px 10px 290px;
+    }
+  </style>
+  <body>
+
+  {{if .admin_ui}}
+    <div class="admin-ui">
+      <div class="admin-ui-side">
+        {{template "side-menu.html" .}}    
+      </div>
+      <div class="admin-ui-main">
+  {{else}}
+    {{template "flash.html" .}}
+  {{end}}

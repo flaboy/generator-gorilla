@@ -1,0 +1,27 @@
+{{set . "title" "<%- entity.name %>"}}
+{{template "header.html" .}}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{url "App.Index"}}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%- entity.name %></li>
+    </ol>
+</nav>
+
+<div class="d-flex py-3">
+    <a class="btn btn-primary" href="{{url "<%- entity.name %>.Add"}}">
+        <i class="bi bi-plus-square"></i>
+        Add New
+    </a>
+</div>
+
+<ul class="list-group">
+    {{range .<%- entity.lname %>_list}}
+        <li class="list-group-item">
+        <a href="{{url "<%- entity.name %>.Detail" .ID}}">{{.Name}}</a>
+        {{.Platform}}
+        </li>
+    {{end}}
+</ul>
+
+{{template "footer.html" .}}

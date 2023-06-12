@@ -1,0 +1,24 @@
+  {{if .DevMode}}
+    {{template "debug.html" .}}
+  {{end}}
+
+  {{if .admin_ui}}
+    </div>
+  </div>
+  {{end}}
+
+  <script>
+    function deleteAndGo(delete_url, redirect_url) {
+    if (confirm("Are you sure?")) {
+        $.ajax({
+            url: delete_url,
+            type: "DELETE",
+            success: function(data) {
+                window.location.href = redirect_url;
+            }
+        });
+    }
+  }
+  </script>
+  </body>
+</html>
