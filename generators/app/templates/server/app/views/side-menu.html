@@ -1,9 +1,8 @@
 <div class="d-flex flex-column flex-shrink-0 p-3" style="width:100%">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Sidebar</span>
+    <a href="/" class="text-decoration-none">
+      <div class="fs-1 text-center text-capitalize"><%- config.name %></div>
     </a>
-    <hr>
+    <hr />
     <ul class="nav nav-pills flex-column mb-auto">
 
       {{range .admin_menus}}
@@ -15,7 +14,7 @@
       {{end}}
 
     </ul>
-    <hr>
+    <hr />
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="/public/avatar.png" alt="" width="32" height="32" class="rounded-circle me-2">
