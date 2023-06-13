@@ -1,5 +1,14 @@
 const Generator = require('yeoman-generator');
 
+function generateRandomString(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+  }
+
 module.exports = class extends Generator {
     prompting() {
         return this.prompt([{
@@ -13,6 +22,7 @@ module.exports = class extends Generator {
         });
     }
     writing() {
+        this.options.secret = generateRandomString(64)
         this.fs.copyTpl(
             this.templatePath('server'),
             this.destinationPath('./'),
