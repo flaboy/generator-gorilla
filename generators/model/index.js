@@ -16,7 +16,7 @@ function camelToHyphen(str) {
   return str;
 }
 
-function typeToGoType(str) {
+function typeToGoType(str, entity) {
   switch(str){
     case 'String':
       return 'string';
@@ -31,10 +31,13 @@ function typeToGoType(str) {
     case 'BigDecimal':
       return 'float64';
     case 'LocalDate':
+      entity.imports['time'] = true;
       return 'time.Time';
     case 'Instant':
+      entity.imports['time'] = true;
       return 'time.Time';
     case 'ZonedDateTime':
+      entity.imports['time'] = true;
       return 'time.Time';
     case 'Boolean':
       return 'bool';
@@ -61,6 +64,7 @@ module.exports = class extends Generator {
       this.options.entities.forEach(entity => {
         this.entities[entity.name] = entity;
         entity.enums = [];
+        entity.imports = {};
         entity.body.forEach(field => {
           field.Uname = upCaseFirst(field.name);
           field.gormOptions = "";
@@ -72,7 +76,7 @@ module.exports = class extends Generator {
               // entity.gormType = 'string';
             }
           }else{
-            field.type = typeToGoType(field.type);
+            field.type = typeToGoType(field.type, entity);
           }
           field.columnName = camelToHyphen(field.name);
         });
@@ -102,9 +106,10 @@ module.exports = class extends Generator {
           });
         }else if(relationship.cardinality === 'OneToMany'){
           this.entities[relationship.to.name].body.push({
+            comment: true,
             name: relationship.from.name,
             type: upCaseFirst(relationship.from.name),
-            Uname: upCaseFirst(relationship.to.name),
+            Uname: upCaseFirst(relationship.from.name),
             skipInForm: true
           });
           this.entities[relationship.to.name].body.push({
@@ -115,6 +120,7 @@ module.exports = class extends Generator {
           });
         }else if(relationship.cardinality === 'ManyToOne'){
           this.entities[relationship.from.name].body.push({
+            comment: true,
             name: relationship.to.name,
             type: upCaseFirst(relationship.to.name),
             Uname: upCaseFirst(relationship.to.name),

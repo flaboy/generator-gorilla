@@ -1,6 +1,9 @@
 package models
 
 import "gorm.io/gorm"
+<% for(var key in entity.imports){ %>
+import "<%- key %>"
+<% } %>
 <% entity.enums.forEach(function(item){ %>
 
 type <%- item.name %> string
@@ -13,7 +16,7 @@ const (
 type <%- entity.name %> struct {
 	gorm.Model
 <% entity.body.forEach(function(field){ -%>
-	<%- field.Uname %>		<%- field.type %> `json:"<%- field.name %>"`
+	<% if(field.comment){ %>//<% } %><%- field.Uname %>		<%- field.type %> <% if(field.columnName){ %>`json:"<%- field.columnName %>"`<% } %>
 <% }); -%>
 }
 
