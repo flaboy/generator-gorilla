@@ -4,10 +4,10 @@ import (
 	"github.com/revel/revel"
 )
 
-type Hello struct {
+type HelloApi struct {
 	ApiController
 }
 
-func (c Hello) SayHello() revel.Result {
+func (c HelloApi) SayHello() revel.Result {
 	return c.Render("world")
 }

@@ -9,24 +9,15 @@ type ApiController struct {
 	gormc.Controller
 }
 
-type ApiResult struct {
-	Code  int         `json:"code"`
-	Data  interface{} `json:"data"`
-	Error string      `json:"error"`
-}
-
 func (c ApiController) Render(data interface{}) revel.Result {
-	return c.RenderJSON(&ApiResult{
-		Code:  0,
-		Data:  data,
-		Error: "",
-	})
+	return c.RenderJSON(data)
 }
 
-func (c ApiController) RenderError(data interface{}) revel.Result {
-	return c.RenderJSON(&ApiResult{
-		Code:  1,
-		Data:  nil,
-		Error: data.(string),
-	})
+func (c ApiController) RenderError(data interface{}, httpCode int) revel.Result {
+	c.Response.Status = httpCode
+	return c.RenderJSON(data)
+}
+
+func (c ApiController) NotFound(message string) revel.Result {
+	return c.RenderError(message, 404)
 }
