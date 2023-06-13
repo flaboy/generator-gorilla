@@ -7,6 +7,7 @@ git clone git@github.com:flaboy/generator-gorilla.git
 npm link一下， 让本机知道 generator-gorilla 就在当前目录.
 ```
 cd generator-gorilla
+npm install
 npm link
 ```
 
