@@ -32,3 +32,6 @@ yo gorilla
 ```
 yo gorilla:jdl jhipster-jdl.jdl
 ```
+
+TODO:
+1. Go禁止循环依赖， 生成的Models有互相引用的情况需要手工修改一下
