@@ -1,4 +1,20 @@
-目前在开发阶段, 临时用法如下:
+# 一个借鉴了jhipster 与 ruby on rails 的代码生成器
+
+* jhipster的jdl很棒，可以很方便的描述模型并且快速生成可用的CRUD，但是java的分层不适合小规模团队，且生成的代码有一点学习成本。
+* ruby on rails生成的代码简单，复合直觉，容易修改。 但是生态逐渐衰落，而且ruby性能也是个问题。
+
+于是有了本项目!
+
+## 特点
+* 基于Golang的Revel Framework，性能高，省内存
+* 可以根据JDL生成CRUD的代码Generator
+* 生成的代码非常简单和复合直觉，不需要学习，看着上下文就会改。类似Ruby on rails风格
+* 低下限： 默认的View为bootstrap的纯HTML,  意味着一个人可以快速写完一切。
+* 高上限： 内建Vite与前端项目的基础代码，可以针对某个页面使用Vue增强，甚至全站前后端分离。 
+
+## 使用方法
+
+### 目前在开发阶段, 临时安装方式
 
 ```
 git clone git@github.com:flaboy/generator-gorilla.git
@@ -22,7 +38,9 @@ yo
 ```
 应该能看到 gorilla 的选项。
 
-之后，创建新项目可以使用:
+### 使用方式
+
+创建新项目可以使用:
 ```
 yo gorilla
 ```
