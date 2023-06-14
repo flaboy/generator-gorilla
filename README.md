@@ -1,7 +1,7 @@
 # 一个借鉴了jhipster 与 ruby on rails 的代码生成器
 
 * jhipster的jdl很棒，可以很方便的描述模型并且快速生成可用的CRUD，但是java的分层不适合小规模团队，且生成的代码有一点学习成本。
-* ruby on rails生成的代码简单，复合直觉，容易修改。 但是生态逐渐衰落，而且ruby性能也是个问题。
+* ruby on rails生成的代码简单，符合直觉，容易修改。 但是生态逐渐衰落，而且ruby性能也是个问题。
 
 JDL的介绍:
   *  https://start.jhipster.tech/jdl-studio/
@@ -12,7 +12,7 @@ JDL的介绍:
 ## 特点
 * 基于Golang的Revel Framework，性能高，省内存
 * 可以根据JDL生成CRUD的代码Generator
-* 生成的代码非常简单和复合直觉，不需要学习，看着上下文就会改。类似Ruby on rails风格
+* 生成的代码非常简单和符合直觉，不需要学习，看着上下文就会改。类似Ruby on rails风格
 * 低下限： 默认的View为bootstrap的纯HTML,  意味着一个人可以快速写完一切。
 * 高上限： 内建Vite与前端项目的基础代码，可以针对某个页面使用Vue增强，甚至全站前后端分离。 
 
