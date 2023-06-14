@@ -27,7 +27,8 @@ yo
 yo gorilla
 ```
 
-使用 https://start.jhipster.tech/jdl-studio/ 编写jdl文件. 下载下来后, 可以:
+使用 https://start.jhipster.tech/jdl-studio/ 编写jdl文件. 
+下载下来后, 可以自动生成所有CRUD的Model、Controller、View、Route、ApiController
 ```
 yo gorilla:jdl jhipster-jdl.jdl
-···
+```
