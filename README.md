@@ -3,6 +3,10 @@
 * jhipster的jdl很棒，可以很方便的描述模型并且快速生成可用的CRUD，但是java的分层不适合小规模团队，且生成的代码有一点学习成本。
 * ruby on rails生成的代码简单，复合直觉，容易修改。 但是生态逐渐衰落，而且ruby性能也是个问题。
 
+JDL的介绍:
+  *  https://start.jhipster.tech/jdl-studio/
+  *  https://www.jhipster.tech/jdl/intro
+
 于是有了本项目!
 
 ## 特点
